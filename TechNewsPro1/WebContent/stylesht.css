@@ -29,4 +29,28 @@ table{
     margin-right: auto;
 	//horizontal-align:center;
 }
+input {
+  padding: 10px;
+  border: solid 5px #dcdcdc;
+  border-radius:10px;
+  transition: box-shadow 0.3s, border 0.3s;
+}
+input.focus {
+  border: solid 1px #707070;
+  box-shadow: 0 0 5px 1px #969696;
+}
+div#formpostion
+{
+	width:60%;
+	margin-left: auto;
+    margin-right: auto;
+}
+label {
+color: #000000;
+font-weight: bold;
+display: block;
+width: 100px;
+float: left;
+}
+label:after { content: ": " }
 //margin: 0 auto; no space around banner
