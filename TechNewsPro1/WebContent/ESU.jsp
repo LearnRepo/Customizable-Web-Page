@@ -39,14 +39,14 @@
 </head>
 <body>
 <h1 id='header' style='color:#fefefe; font-size:50px'>Tech News</h1>
-	<form name='first' action='' method='post'>
+	<form name='first' action='AddUser' method='post'>
 	<table id='employee_details'>
 	<tr>
 		<td align='right'>
 			Employee Id
 		</td>
 		<td>
-			<input type='text' id='employeeid' onchange="AvailableId()">
+			<input type='text' id='employeeid' name='employeeid' onchange="AvailableId()">
 		</td>
 	</tr>
 	<tr>
@@ -54,12 +54,12 @@
 			Employee Type
 		</td>
 		<td>
-			<select>
-				<option>Editor In Chief</option>
-				<option>Editor</option>
-				<option>Editor</option>
-				<option selected>Reporter</option>
-				<option>Photographer</option>
+			<select id="emptype" name='emptype'>
+				<option value="Editor In Chief">Editor In Chief</option>
+				<option value="Editor">Editor</option>
+				<option value="Sub Editor">Sub Editor</option>
+				<option value="Reporter" selected>Reporter</option>
+				<option value="Photographer" >Photographer</option>
 			</select>
 		</td>
 	</tr>
@@ -68,7 +68,7 @@
 			Name
 		</td>
 		<td>
-			<input type='text' id='empname'>
+			<input type='text' id='empname' name='empname'>
 		</td>
 	</tr>
 	<tr>
@@ -76,12 +76,12 @@
 			Address
 		</td>
 		<td>
-			<input type='text' id='empadd'>
+			<input type='text' id='empadd' name='empadd'>
 		</td>
 	</tr>
 	<tr>
 		<td colspan=2 align='center'>
-			<input type='submit' value='Add me'>
+			<input type='submit' id="signup" value='Sign Up'>
 		</td>
 	</tr>
 	</table>

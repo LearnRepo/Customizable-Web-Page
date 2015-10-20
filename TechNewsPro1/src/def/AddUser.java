@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class userexist
+ * Servlet implementation class AddUser
  */
-@WebServlet("/userexist")
-public class userexist extends HttpServlet {
+@WebServlet("/AddUser")
+public class AddUser extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public userexist() {
+    public AddUser() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,18 +34,17 @@ public class userexist extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String empId = request.getParameter("Empid");
-		//System.out.print(empId);
-		ConnectMysql connectMysql = new ConnectMysql("Select count(employeeId) As rowCount From employee_details where employeeID='"+empId+"'");
-		if(connectMysql.getNoRow()!=0 || empId.length()>8)
-		{
-			response.setContentType("text/plain");
-			response.getWriter().write("0");
-		}
+		String employeeId = request.getParameter("employeeid");
+		String empType = request.getParameter("emptype");
+		String empName = request.getParameter("empname");
+		String empPlace = request.getParameter("empadd");
+		//System.out.print(employeeId+empType+empName+empPlace);
+		ConnectMysql connectMysql = new ConnectMysql(employeeId,empType,empName,empPlace);
+		if(connectMysql.getNoRow()>0)
+		getServletContext().getRequestDispatcher("/Home.jsp").forward(request, response);
 		else
 		{
-			response.setContentType("text/plain");
-			response.getWriter().write("1");
+			response.sendRedirect("/TechNewsPro1/Home.jsp");
 		}
 	}
 
