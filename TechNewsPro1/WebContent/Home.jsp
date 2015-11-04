@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Tech News</title>
-<link rel="stylesheet" href="http://localhost:8080/TechNewsPro1/stylesht.css" type="text/css" />
+<link rel="stylesheet" href="http://192.168.0.103:8080/TechNewsPro1/stylesht.css" type="text/css" />
 </head>
 <body>
 	<h1 id='header' style='color:#fefefe; font-size:50px'>Tech News</h1>

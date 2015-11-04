@@ -1,0 +1,39 @@
+body{
+	margin:0px;
+}
+#banner{
+	margin:0px;
+	width:100%;
+	height:50px;
+	background-color:#004080;
+	padding: 20px 20px 20px 20px;
+}
+.menu{
+	float:left;
+	margin-right:40px;
+}
+#noteArea{
+	border:1px solid #0080ff;
+	width:74%;
+	float:left;
+	//spacing: 5px 5px 5px 5px;
+	padding: 5px 5px 5px 5px;
+	//border-radius:10px;
+}
+#nav{
+	border:1px solid #0080ff;
+	width:20%;
+	background-color:#C0C0C0;
+	float:right;
+	margin:0;
+}
+#footer{
+	//position: absolute;
+    bottom: 0px;
+	border:1px solid #0080ff;
+}
+.container{
+	border:1px solid #00ff80;
+	horizontal-align:center;
+	padding:10px 20px 10px 10px;
+}

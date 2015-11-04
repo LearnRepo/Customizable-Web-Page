@@ -5,10 +5,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Sign up</title>
-<link rel="stylesheet" href="http://localhost:8080/TechNewsPro1/stylesht.css" type="text/css" />
-<script type="text/javascript" src="http://localhost:8080/TechNewsPro1/jquery.validate.js">
+<link rel="stylesheet" href="http://192.168.0.103:8080/TechNewsPro1/stylesht.css" type="text/css" />
+<script type="text/javascript" src="http://192.168.0.103:8080/TechNewsPro1/jquery.validate.js">
 </script>
-<script type="text/javascript" src="http://localhost:8080/TechNewsPro1/jquery.min.js">
+<script type="text/javascript" src="http://192.168.0.103:8080/TechNewsPro1/jquery.min.js">
 </script>
 <script>
 	$(document).ready(
