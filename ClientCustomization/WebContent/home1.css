@@ -13,24 +13,26 @@ body{
 	margin-right:40px;
 }
 #noteArea{
-	border:1px solid #0080ff;
-	width:74%;
-	float:left;
-	//spacing: 5px 5px 5px 5px;
-	padding: 5px 5px 5px 5px;
+	//border:1px solid #0080ff;
+	background-color:#d5dadd;
+	width:80%;
+	float:right;
 	//border-radius:10px;
 }
 #nav{
-	border:1px solid #0080ff;
+	//border:1px solid #0080ff;
 	width:20%;
 	background-color:#C0C0C0;
-	float:right;
+	float:left;
 	margin:0;
 }
 #footer{
+	width:100%;
 	//position: absolute;
-    bottom: 0px;
-	border:1px solid #0080ff;
+    //bottom: 0px;
+	//border:1px solid #0080ff;
+	background-color:#82c0ff;
+	height:40px;
 }
 .container{
 	border:1px solid #00ff80;

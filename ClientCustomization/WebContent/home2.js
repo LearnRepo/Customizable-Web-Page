@@ -1,8 +1,8 @@
 $(function(){
 	var Height=window.screen.availHeight;
-	$("#noteArea").css("height",Height-100);
-	$("#nav").css("height",Height-100);
-	
+	$("#noteArea").css("height",Height);
+	$("#nav").css("height",Height);
+	$("#footer").css({top:Height+90,position:'absolute'});
 	/*
 	 * 
 	 */
@@ -16,7 +16,7 @@ $(function(){
 		bHtml = $("#noteArea").html();
 		for(var i=1;i<=CC;i++)
 			{
-				data[i] = $("#k"+i).text();
+				data[i] = $("#k"+i).val();
 				pt[i] = $("#c"+i).position().top;
 				pl[i] = $("#c"+i).position().left;
 			}
