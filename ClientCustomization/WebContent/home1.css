@@ -1,6 +1,13 @@
 body{
 	margin:0px;
 }
+textarea{
+	//opacity:0;
+	width:230px;
+	height:60px;
+	background-color:#99FFCC;
+	border:0px solid #008800;
+}
 #banner{
 	margin:0px;
 	width:100%;
@@ -16,14 +23,18 @@ body{
 	//border:1px solid #0080ff;
 	background-color:#d5dadd;
 	width:80%;
-	float:right;
+	float:left;
 	//border-radius:10px;
+	overflow-x:auto;
+	overflow-y:auto;
+	overflow-x:auto;
+	overflow-y:auto;
 }
 #nav{
 	//border:1px solid #0080ff;
 	width:20%;
 	background-color:#C0C0C0;
-	float:left;
+	float:right;
 	margin:0;
 }
 #footer{
@@ -35,7 +46,8 @@ body{
 	height:40px;
 }
 .container{
-	border:1px solid #00ff80;
+	//border:1px solid #00ff80;
 	horizontal-align:center;
-	padding:10px 20px 10px 10px;
+	padding:2px 2px 2px 2px;
+	background-color:#e8ed8b;
 }
