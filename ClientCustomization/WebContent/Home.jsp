@@ -13,8 +13,10 @@
 </head>
 <body>
 <div id="banner">
-<button class="menu" id="AddSheet"><img src="http://localhost:8080/ClientCustomization/add_sheet.png" width=40px height=40px></button>
+<!--  <button class="menu" id="AddSheet"><img src="http://localhost:8080/ClientCustomization/add_sheet.png" width=40px height=40px></button>
 <button class="menu" id="Update"><img src="http://localhost:8080/ClientCustomization/update-icon.gif" width=40px height=40px></button>
+-->
+<img src="http://localhost:8080/ClientCustomization/Logo2.png" height=80px>
 </div>
 <div>
 	<div id="noteArea" class="navNote">

@@ -1,0 +1,46 @@
+body{
+	margin:0;
+	margin-left:5%;
+	margin-right:5%;
+	color:green;
+	width:90%;
+	//background-color:#B3D7E3;
+	background-image:url("http://localhost:8080/Test2/image/1677068.jpg");
+	overflow-x: hidden; 
+}
+.notes{
+	//border-width:10px;
+	//border-style:solid;
+	border-radius:2px;
+	//border-color:yellow;
+	border:10px solid rgba(255,255,0,0.6);
+	background-color:white;
+	float:left;
+	overflow:auto;
+	overflow-x:hidden;
+	overflow-y:hidden;
+}
+.notes:hover { 
+	overflow-y:scroll;
+	overflow-x:scroll; 
+	}
+#main{
+	overflow: auto;
+	width:100%;
+}
+#header{
+	width:100%;
+	horizontal-align:center;
+}
+#lineInterface{
+	width:100%;
+	horizontal-align:center;
+}
+textarea{
+	overflow: auto;
+	background-color:black;
+	color:white;
+}
+#executor{
+	margin:1px 1px 1px 1px;
+}

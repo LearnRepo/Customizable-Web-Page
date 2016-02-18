@@ -11,9 +11,9 @@ textarea{
 #banner{
 	margin:0px;
 	width:100%;
-	height:50px;
-	background-color:#004080;
-	padding: 20px 20px 20px 20px;
+	height:90px;
+	background-color:#16365D;
+	//padding: 20px 20px 20px 20px;
 }
 .menu{
 	float:left;
