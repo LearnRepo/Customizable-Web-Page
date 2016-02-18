@@ -93,13 +93,23 @@ $(function(){
 	$("#save").click(function()
 	{
 		var noteList = [];
-		noteList = $(".notes").toArray(function(){return this});
+		noteList = $(".notes").toArray(function(){return this}); 
 		for(var i =0 ;i<noteList.length;i++)
 			{
-				
+				//alert(noteList[i].textContent+" "+noteList[i].offsetTop + " " + noteList[i].offsetLeft + " "+ noteList[i].id+" "+noteList[i].offsetHeight+" "+noteList[i].offsetWidth);
 			}
-		//alert(noteList[i].textContent+" "+noteList[i].offsetTop + " " + noteList[i].offsetLeft + " "+ noteList[i].id+" "+noteList[i].offsetHeight+" "+noteList[i].offsetWidth);
-		
+		//json2 test
+		/*var jsonArg1 = new Object();
+	    jsonArg1.name = 'calc this';
+	    jsonArg1.value = 3.1415;
+		var jsonArg2 = new Object();
+	    jsonArg2.name = 'calc this again';
+	    jsonArg2.value = 2.73;
+
+		var pluginArrayArg = new Array();
+	    pluginArrayArg.push(jsonArg1);
+	    pluginArrayArg.push(jsonArg2);
+	    alert(JSON.stringify(pluginArrayArg));*/
 	});
 	
 	$("#Refresh").click(function(){
