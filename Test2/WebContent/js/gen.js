@@ -1,39 +1,86 @@
-var StickyNotes = {
-		Notes:"",
-		Id:0,
-		HolderShellPx:0,
-		HolderShellPy:0,
-		HolderShellSx:0,
-		HolderShellSy:0,
-		ContainerShellPx:0,
-		ContainerShellPy:0,
-		ContainerShellSx:0,
-		ContainerShellSy:0,
-		
-		getId:function()
-		{
-			return ID;
-		},
-		WriteNotes:function(k)
-		{
-			alert("Hi shad");
-			Notes=k;
-		}
-};
 var noteStack = [];
 var noteCounter=0;
+
+function LoadPreviousNotes()
+{
+	main = document.getElementById('main');
+	var note;
+	//note.innerHTML=;
+	var str = $.jStorage.get("s1000");
+	var obj = JSON.parse(str);
+	var T = [];
+	var L = [];
+	var H = [];
+	var W = [];
+	var I = [];
+	var C = [];
+	for(var i = 0;i<obj.length;i++)
+		{
+			T[i]=obj[i].offsetTop;
+			L[i]=obj[i].offsetLeft;
+			H[i]=obj[i].offsetHeight;
+			W[i]=obj[i].offsetWidth;
+			I[i]=obj[i].id;
+			C[i]=obj[i].textContent;
+		}
+	
+	for(var i = 0;i<obj.length;i++)
+	{
+		//alert(I[i]);
+		note = document.createElement('div');
+		note.innerHTML=C[i];
+		note.setAttribute('class','notes');
+		note.setAttribute('id',I[i]);
+		$("#"+I[i]).addClass("ui-widget-content");
+		note.style.position = "relative";
+		note.style.top = (T[i]-main.offsetTop) + "px";
+		if(i==0)
+			note.style.left = (L[i]-main.offsetLeft) + "px";
+		else
+			note.style.left = (L[i]-(main.offsetLeft-$("#"+I[i-1]).width)) + "px";
+		/*if(i==0)
+			{
+				note.style.top = T[i] + "px";
+				note.style.left = L[i] + "px";
+			}
+		else
+			{
+			 if(T[i]>T[i-1])
+				note.style.top = (T[i]-T[i-1]) + "px";
+			 if(T[i]<T[i-1])
+					note.style.top =(T[i-1]-T[i]) + "px";
+			 if(L[i]>L[i-1])
+				note.style.left = (L[i]-L[i-1]) + "px";
+			 if(L[i]<L[i-1])
+					note.style.left = (L[i-1]-L[i]) + "px";
+			}*/
+		main.appendChild(note);
+		$("#"+I[i]).css({width:W[i]+"px",height:H[i]+"px"});
+		$(".notes").draggable({containment:"#main"});
+		$(".notes").resizable();
+	}
+	
+	noteCounter = $.jStorage.get("Gcounter");;
+}
+
+
+
 $(function(){
 	var main;
 	var note;
 	$(window).load(function(){
 		var w = window.innerWidth;
 		var h = window.innerHeight;
-		$("#header").css({height:h*0.1, "background-color":"#155450"});
-		$("#main").css({height:h*0.75, "background-color":"#E4F1F5"});
+		$("#header").css({height:h*0.1});
+		$("#main").css({height:h*0.75, "background-color":"rgb(255,255,255,0.3)"});
 		$("#lineInterface").css({height:h*0.05});
 		$("#executor").css({height:h*0.05, "background-color":"white"});
 		$("#lineInterface").html("<textarea id='tcommand' autofocus align='center'></textarea>");
 		$("#tcommand").css({width:'99.5%',height:'100%'});
+		if($.jStorage.get("s1000")!="[]")
+		{
+			LoadPreviousNotes();
+		}
 	});
 	
 	$("#Submit").click(function(){
@@ -46,16 +93,17 @@ $(function(){
 		note.setAttribute('class','notes');
 		note.setAttribute('id',"c"+noteCounter);
 		$("#c"+(noteCounter)).addClass("ui-widget-content");
-		if(document.getElementById('default-width').value > 100 && document.getElementById('default-height').value > 100)
+		main.appendChild(note);
+		$("#c"+(noteCounter)).css({width:100,height:100});
+		/*if(document.getElementById('default-width').value > 100 && document.getElementById('default-height').value > 100)
 		{
-			main.appendChild(note);
+			
 			$("#c"+(noteCounter)).css({width:document.getElementById('default-width').value,height:document.getElementById('default-height').value});
 		}
 		else
 			{
 				alert("Note size is significantly small!");
-			}
-
+			}*/
 		$(".notes").draggable({containment:"#main"});
 		$(".notes").resizable();
 		noteCounter++;
@@ -70,8 +118,8 @@ $(function(){
 			{
 				var w = window.innerWidth;
 				var h = window.innerHeight;
-				$("#header").css({height:h*0.1, "background-color":"#155450"});
-				$("#main").css({height:h*0.75, "background-color":"#E4F1F5"});
+				$("#header").css({height:h*0.1});
+				$("#main").css({height:h*0.75, "background-color":"rgb(255,255,255,0.3)"});
 				$("#lineInterface").css({height:h*0.05});
 			});
 	
@@ -93,27 +141,42 @@ $(function(){
 	$("#save").click(function()
 	{
 		var noteList = [];
+		var jsonArg1;
+		var pluginArrayArg = new Array();
+		var jsonstring;
+		
 		noteList = $(".notes").toArray(function(){return this}); 
 		for(var i =0 ;i<noteList.length;i++)
 			{
 				//alert(noteList[i].textContent+" "+noteList[i].offsetTop + " " + noteList[i].offsetLeft + " "+ noteList[i].id+" "+noteList[i].offsetHeight+" "+noteList[i].offsetWidth);
+				jsonArg1 = new Object();
+				jsonArg1.textContent = noteList[i].textContent;
+				jsonArg1.id = noteList[i].id;
+				jsonArg1.offsetTop = noteList[i].offsetTop;
+				jsonArg1.offsetLeft = noteList[i].offsetLeft;
+				jsonArg1.offsetHeight = noteList[i].offsetHeight;
+				jsonArg1.offsetWidth = noteList[i].offsetWidth;
+				pluginArrayArg.push(jsonArg1);
 			}
-		//json2 test
-		/*var jsonArg1 = new Object();
-	    jsonArg1.name = 'calc this';
-	    jsonArg1.value = 3.1415;
-		var jsonArg2 = new Object();
-	    jsonArg2.name = 'calc this again';
-	    jsonArg2.value = 2.73;
-
-		var pluginArrayArg = new Array();
-	    pluginArrayArg.push(jsonArg1);
-	    pluginArrayArg.push(jsonArg2);
-	    alert(JSON.stringify(pluginArrayArg));*/
+		jsonstring=JSON.stringify(pluginArrayArg);
+		$.jStorage.set("s1000",jsonstring);
+		$.jStorage.set("Gcounter",noteCounter);
 	});
 	
-	$("#Refresh").click(function(){
+	$("#copy").click(function(){
+		var str = $.jStorage.get("s1000");
+		alert(str);
+		//alert("Sjag")
+	});
+	$("#delete").click(function(){
+		var r = confirm("Content will be gone!");
+		if (r == true) {
+			$.jStorage.set("s1000","[]");
+			$("#main").empty();
+		} else {
+		   
+		}
 		
+		//alert("Sjag")
 	});
-	
 });

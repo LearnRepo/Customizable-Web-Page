@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="qjs/jquery-ui.css" type="text/css">
 <script type="text/javascript" src="qjs/Jquery.js"></script>
 <script type="text/javascript" src="qjs/jquery-ui.js"></script>
+<script type="text/javascript" src="qjs/jstorage.js"></script>
 </head>
 
 <body onload="loader()">
@@ -21,7 +22,7 @@
 <button class="iexecutor" id="Submit">Submit</button>
 <button class="iexecutor" id="clear">Clean</button>
 <button class="iexecutor" id="copy">Copy</button>
-<button class="iexecutor" id="Refresh">Refresh</button>
+<button class="iexecutor" id="delete">Delete</button>
 <button class="iexecutor" id="save">Save</button>
 <textarea class="iexecutor" rows='1' cols=7 maxlength='7' id='tcolor'></textarea>Font color
 <textarea class="iexecutor" rows='1' cols=7 maxlength='7' id='bcolor'></textarea>Back color
