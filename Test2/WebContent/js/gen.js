@@ -72,7 +72,7 @@ $(function(){
 		var w = window.innerWidth;
 		var h = window.innerHeight;
 		$("#header").css({height:h*0.1});
-		$("#main").css({height:h*0.75, "background-color":"rgb(255,255,255,0.3)"});
+		$("#main").css({height:h*0.74, "background-color":"rgb(255,255,255,0.3)"});
 		$("#lineInterface").css({height:h*0.05});
 		$("#executor").css({height:h*0.05, "background-color":"white"});
 		$("#lineInterface").html("<textarea id='tcommand' autofocus align='center'></textarea>");
@@ -94,7 +94,7 @@ $(function(){
 		note.setAttribute('id',"c"+noteCounter);
 		$("#c"+(noteCounter)).addClass("ui-widget-content");
 		main.appendChild(note);
-		$("#c"+(noteCounter)).css({width:100,height:100});
+		$("#c"+(noteCounter)).css({width:200,height:150});
 		/*if(document.getElementById('default-width').value > 100 && document.getElementById('default-height').value > 100)
 		{
 			
@@ -109,9 +109,12 @@ $(function(){
 		noteCounter++;
 	});
 	
-	$("#clear").click(function(){
-		//var canvas = document.getElementById('main');
-		$("#main").empty();
+	$("#add").click(function(){
+		document.getElementById("edit").style.display = 'block';
+	});
+	
+	$("#doneedit").click(function(){
+		document.getElementById("edit").style.display = 'none';
 	});
 	
 	$(window).resize(function()
@@ -119,24 +122,26 @@ $(function(){
 				var w = window.innerWidth;
 				var h = window.innerHeight;
 				$("#header").css({height:h*0.1});
-				$("#main").css({height:h*0.75, "background-color":"rgb(255,255,255,0.3)"});
+				$("#main").css({height:h*0.74, "background-color":"rgb(255,255,255,0.3)"});
 				$("#lineInterface").css({height:h*0.05});
 			});
 	
 	//remove div
 	//$("*").on('blur change click dblclick error focus focusin focusout hover keydown keypress keyup load mousedown mouseenter mouseleave mousemove mouseout mouseover mouseup resize scroll select submit', function(){
 	$("#main").dblclick(function(event){
-		if(event.target.id != "main")
-		$("#"+event.target.id).remove();
+		//code for deleting target element in div
+		
+		/*if(event.target.id != "main")
+		$("#"+event.target.id).remove();*/
+		
 		//alert(event.target.className[0]);
 		
+		// check what is the id of target
 		//alert(event.target.id);
-		/*if((event.target.className).indexOf("NOTES"))
-			{
-				//alert($(this).children().attr("id"));
-				$("#"+$(this).children().attr("id")).remove();
-			}*/
+		
+		
 	});
+	
 	
 	$("#save").click(function()
 	{

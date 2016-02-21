@@ -1,9 +1,14 @@
+html{
+	width:100%;
+	height:100%;
+}
 body{
 	margin:0;
 	margin-left:5%;
 	margin-right:5%;
 	color:green;
 	width:90%;
+	Height:100%;
 	//background-color:#B3D7E3;
 	background-image:url("http://localhost:8080/Test2/image/1677068.jpg");
 	overflow-x: hidden; 
@@ -11,22 +16,27 @@ body{
 .notes{
 	//border-width:10px;
 	//border-style:solid;
-	border-radius:2px;
+	border-radius:0px;
 	//border-color:yellow;
-	border:10px solid rgba(255,255,0,0.6);
-	background-color:white;
+	//border:2px solid rgba(253,253,0,1);
+	background-color:#F5E690;
 	float:left;
-	overflow:auto;
+	//overflow:auto;
 	//overflow-x:hidden;
 	//overflow-y:hidden;
+	-webkit-box-shadow: 0 0 10px 5px rgba(140,140,140,0.5);
+    -moz-box-shadow: 0 0 10px 5px rgba(140,140,140,0.5);
+    box-shadow: 0 0 10px 5px rgba(140,140,140,0.5);
 }
 .notes:hover { 
 	//overflow-y:scroll;
-	//overflow-x:scroll; 
+	//overflow-x:scroll;
+	cursor:move; 
 	}
 #main{
 	overflow: auto;
-	width:100%;
+	width:98%;
+	padding: 1% 1% 1% 1%;
 }
 #header{
 	width:100%;
@@ -43,4 +53,22 @@ textarea{
 }
 #executor{
 	margin:1px 1px 1px 1px;
+}
+#edit{
+	display:none;
+	z-index:99;
+	position: absolute;
+	top:0;
+	left:0;
+	height:100%;
+	width:100%;
+	background:rgba(170,170,170,0.4)
+}
+#writer{
+	height:25%;
+	width:25%;
+	margin-top:10%;
+	margin-left:25%;
+	background:red;
+	horizontal-align:center;
 }
